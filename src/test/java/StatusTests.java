@@ -16,7 +16,9 @@ public class StatusTests {
         get("https://selenoid.autotests.cloud/status")
                 .then()
                 .body("total", Is.is(5))
-                .log().all();
+                .statusCode(200)
+                .log().status()
+                .log().body();
 
 
 
